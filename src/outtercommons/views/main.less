@@ -1,0 +1,626 @@
+html,body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin:0;
+  padding:0;
+}
+.main{
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin:0;
+  padding:0;
+}
+.main {
+  background:#f5f5f5;
+  .app-header{
+    position:fixed;
+    z-index:30;
+    top:0;
+    left:0;
+    width:100%;
+    height:60px;
+    background: #aaaaac;
+    //background:#1d9094;
+    .app-header-content{
+      display:flex;
+      width:100%;
+      height:100%;
+    }
+    .nav-left{
+      display:flex;
+      margin-left:30px;
+      flex:1;
+      justify-content:flex-start;
+      align-items:center;
+      color: #fff;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .nav-right{
+      display:flex;
+      margin-right:30px;
+      flex:1;
+      justify-content:flex-end;
+      align-items:center;
+      color: #fff;
+      font-size:14px;
+      .x-font{
+        font-size:14px;
+        color:#fff;
+      }
+    }
+  }
+  .sidebar-menu{
+    display: block;
+    position: fixed;
+    width: 250px;
+    z-index: 25;
+    padding-top: 60px;
+    margin:0;
+    height:calc(100% - 60px);
+    overflow-x: hidden;
+    background: #ccc;
+    transition: width .3s;
+    overflow-y: auto;
+    ul{
+      width: 100%;
+    }
+  }
+  .main-header{
+    box-sizing: border-box;
+    position: fixed;
+    display: block;
+    top:60px;
+    padding-left: 250px;
+    width: 100%;
+    height: 45px;
+    line-height:45px;
+    margin:0 auto;
+    z-index: 20;
+    box-shadow: 0 2px 1px 1px rgba(100, 100, 100, 0.1);
+    background:#fff;
+    transition: padding .3s;
+    .main-header-flex{
+      display:flex;
+      align-items:center;
+      height:100%;
+      width:100%;
+      padding-left:20px;
+    }
+  }
+  .main-view{
+    display: flex;
+    flex:1;
+    height:100%;
+    justify-content:flex-start;
+    background:#f5f5f5;
+    width:calc(100% - 250px);
+    height:calc(100% - 150px);
+    padding-top: 125px;
+    margin-left:250px;
+    .single-page{
+    height:100%;
+    width:97%;
+    margin:0 1.5%;
+    //overflow:hidden;
+    font-size:13px;
+    .el-button--mini, .el-button--mini.is-round{
+    height: 32px;
+    }
+    .el-table td, .el-table th{
+        padding: 2px 0 !important;
+        font-size: 13px !important;
+    }
+    }
+  }
+  .main-all{
+    display: flex;
+    flex:1;
+    height:100%;
+    justify-content:flex-start;
+    background:#f5f5f5;
+    width:100%;
+    .single-page{
+    height:100%;
+    width:97%;
+    margin:0 1.5%;
+    //overflow:hidden;
+    font-size:13px;
+    .el-button--mini, .el-button--mini.is-round{
+    height: 32px;
+    }
+    .el-table td, .el-table th{
+        padding: 2px 0 !important;
+        font-size: 13px !important;
+    }
+    }
+  }
+  .el-tag + .el-tag {
+    margin-left: 10px;
+  }
+}
+a{
+text-decoration:none;
+}
+ul li {
+  list-style:none;
+}
+/* native-toast.css */
+.native-toast {
+  position: fixed;
+  background-color: rgba(50, 50, 50, .8);
+  border-radius: 30px;
+  color: white;
+  left: 50%;
+  text-align: center;
+  padding: 10px 20px;
+  opacity: 0;
+  z-index: 99999;
+  transition: transform .25s, opacity .25s, top .25s;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+[data-dpr="2"] .native-toast {
+  font-size: 28px;
+}
+
+[data-dpr="3"] .native-toast {
+  font-size: 42px;
+}
+
+.native-toast-bottom {
+  bottom: 50px;
+  -ms-transform: translateX(-50%) translateY(50px);
+      transform: translateX(-50%) translateY(50px)
+}
+
+.native-toast-bottom.native-toast-shown {
+  opacity: 1;
+  -ms-transform: translateX(-50%) translateY(0);
+      transform: translateX(-50%) translateY(0);
+}
+
+.native-toast-bottom.native-toast-edge {
+  bottom: 0;
+}
+
+.native-toast-top {
+  top: 50px;
+  -ms-transform: translateX(-50%) translateY(-50px);
+      transform: translateX(-50%) translateY(-50px)
+}
+
+.native-toast-top.native-toast-shown {
+  opacity: 1;
+  -ms-transform: translateX(-50%) translateY(0);
+      transform: translateX(-50%) translateY(0);
+}
+
+.native-toast-top.native-toast-edge {
+  top: 0;
+}
+
+.native-toast-center {
+  top: 0;
+  -ms-transform: translateX(-50%) translateY(-50px);
+      transform: translateX(-50%) translateY(-50px)
+}
+
+.native-toast-center.native-toast-shown {
+  opacity: 1;
+  top: 50%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+}
+
+.native-toast-edge {
+  border-radius: 0;
+  width: 100%;
+  text-align: left;
+}
+.native-toast:not(.native-toast-edge) {
+    max-width: 300px;
+}
+
+/*
+  max-width does not seem to work in small screen?
+*/
+
+/*@media screen and (max-width: 768px) {
+  .native-toast:not(.native-toast-edge) {
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .native-toast:not(.native-toast-edge) {
+    max-width: 300px;
+  }
+}*/
+
+/* types */
+
+.native-toast-error {
+  background-color: #d92727;
+  color: white;
+}
+
+.native-toast-success {
+  background-color: #62a465;
+  color: white;
+}
+
+.native-toast-warning {
+  background-color: #fdaf17;
+  color: white;
+}
+
+.native-toast-info {
+  background-color: #5060ba;
+  color: white;
+}
+
+[class^="native-toast-icon-"] {
+  vertical-align: middle;
+  margin-right: 8px
+}
+
+[class^="native-toast-icon-"] svg {
+  width: 14px;
+  height: 14px;
+}
+
+ [data-dpr="2"] .native-toast svg {
+  width: 28px;
+  height: 28px;
+}
+[data-dpr="3"] .native-toast svg {
+  width: 42px;
+  height: 42px;
+}
+
+.el-table .warning-row {
+    background: oldlace !important;
+  }
+
+.el-table .success-row {
+   // background: #f0f9eb !important;
+  }
+  .el-dialog--center .el-dialog__body {
+    text-align: initial;
+    padding: 5px 20px !important;
+}
+.el-dialog{
+  max-width:1250px;
+}
+.main-app{
+  height:100%;
+}
+.tableRowClassName {
+  background: #D0D0D3;
+    color: #000;
+    height:43px;
+}
+.el-upload-list__item:first-child {
+    margin-top: -3px !important;
+}
+.el-upload-list__item:last-child{
+  margin-bottom:5px!important;
+}
+.el-table .cell {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    white-space: normal;
+    word-break: break-all;
+    line-height: 23px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.parcel-collector .parcel-main .el-table .table-head-th {
+    background: #D0D0D3;
+    color: #000;
+    height: 43px;
+    th{
+   //background: #D0D0D3;
+   background: linear-gradient(#D0D0D3, #d1d2d7);
+  // background: linear-gradient(to right,#c1c3cf, #d1d2d7);
+    }
+}
+.el-popper[x-placement^=bottom] {
+    margin-top: 3px;
+}
+.el-table th, .el-table tr {
+    height: 35px;
+}
+// 重写ui框架的样式
+.el-table--striped .el-table__body tr.el-table__row--striped.current-row td, .el-table__body tr.current-row>td, .el-table__body tr.hover-row.current-row>td, .el-table__body tr.hover-row.el-table__row--striped.current-row>td, .el-table__body tr.hover-row.el-table__row--striped>td, .el-table__body tr.hover-row>td {
+    /* background-color: #22ccfe; */
+   background: linear-gradient(#ecf5ff);
+}
+
+.dialog-main{
+  .el-checkbox{
+    width:112px;
+    margin-left:0;
+  }
+}
+.el-pagination{
+  margin-bottom:10px
+}
+.sidebar-menu{
+  .el-menu-item.is-active {
+    background: #505050!important;
+  }
+}
+.el-pagination {
+  display:inline-flex;
+  align-items:center;
+  height:35px;
+  margin:5px 0 10px 0;
+  button,input{
+    height:32px;
+  }
+  .btn-prev,.btn-next,ul{
+  background:#f5f5f5!important;
+  height:32px;
+  }
+  .el-pager{
+    .number {
+    vertical-align:middle;
+    height:32px;
+    line-height:32px;
+    padding:0;
+    }
+  }
+}
+.qcPage .childDetail .detail-flex {
+    display: flex;
+    background: linear-gradient(#D0D0D3, #d1d2d7);
+}
+.qcPage .childDetail .bottom{
+  margin:10px auto;
+}
+// 类似异常页面以表格为主的样式集合
+//表头公共的部分
+.el-table{
+  .table-head-th{
+    background: #D0D0D3;
+    color: #000;
+    th{
+    background: #D0D0D3;
+    }
+  }
+}
+.tab{
+  //.tab-input{
+   // border-radius: 4px;
+    //box-shadow:none;
+  //}
+}
+.el-input__inner{
+  height:32px !important;
+  text-align:center !important;
+}
+.el-table .warning-row {
+    background: oldlace !important;
+  }
+
+.el-table .success-row {
+   // background: #f0f9eb !important;
+  }
+// base----start
+.parcel-collector{
+    width:100%;
+    height:100%;
+    .operate{
+      padding-top: 10px;
+      width:100%;
+      height:40px;
+      display:flex;
+      align-items:center;
+      .outer{
+        height:40px;
+        line-height:40px;
+        text-align:center;
+        width:100px;
+        border:0;
+        background:#2d8cf0;
+        color:#fff;
+        margin:10px;
+        border-radius:4px;
+      }
+      .outer:hover{
+        background:#57a3f4;
+      }
+    }
+    .parcel-header{
+      display:flex;
+      width:100%;
+      flex-wrap: wrap;
+      .tab{
+        height:32px;
+        display:inline-flex;
+        flex:1;
+        align-items:center;
+        margin: 10px;
+        min-width:120px;
+        .tab-input{
+          width:100%;
+          min-width:120px;
+        }
+        button,input{
+        height:32px !important;
+        padding: 8px 12px !important;
+        }
+        .icon{
+          display:flex;
+          flex:1;
+          align-items:center;
+          justify-content: center;
+          cursor: pointer;
+          max-width:120px;
+        }
+        .icon:active,.icon:hover{
+          color:#18E;
+          align-items:center;
+        }
+      }
+      .tab-unique{
+        height:32px;
+        display:inline-flex;
+        flex:1;
+        align-items:center;
+        margin: 10px;
+        min-width:220px;
+        .el-input__icon, .el-date-editor .el-range-separator {
+            padding-bottom: 8px;
+        }
+         button,input{
+          height:30px !important;
+          }
+        }
+      .operating{
+        max-width:160px;
+        min-width:120px;
+      }
+    }
+    .parcel-main{
+    margin: 0px 10px;
+      margin-top:20px;
+      .el-table{
+        .table-head-th{
+          background: #D0D0D3;
+          color: #000;
+          th{
+          background: #D0D0D3;
+          }
+        }
+      }
+    }
+// base----end
+// 详情的start
+  .detail{
+    position: fixed;
+    left: 250px;
+    top: 105px;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background: #fff;
+    color: #000;
+    h2{
+      width:100%;
+      padding-left:10px;
+      position:relative;
+      display:flex;
+      align-items:center;
+      .right{
+        right:40px;
+        top:4px;
+        position:absolute;
+      }
+      span{
+        margin-left:20px;
+        color:#18E;
+      }
+    }
+    .detail-single-content{
+      display:flex;
+      border:4px solid #f8f8f8;
+      margin:10px;
+      div{
+        display:flex;
+        flex: 1;
+        justify-content:flex-start;
+        align-items: flex-start;
+        ul{
+          width:100%;
+          li{
+            width:100%;
+            height:25px;
+          }
+        }
+        .li-h{
+          display:inline-block;
+          width:95px;
+        }
+        span{
+          display:inline-block;
+        }
+      }
+    }
+    .picture{
+      display:flex;
+      justify-content: flex-start;
+      div{
+        display:flex;
+        flex:1;
+        align-items:center;
+        justify-content: center;
+        flex-wrap:wrap;
+        img{
+        width:80%;
+        max-width:100%;
+        height:50px;
+        }
+        p{
+          width:100%;
+          text-align:left;
+        }
+      }
+    }
+  }
+}
+// 类似异常页面以表格为主的样式集合--end
+// 重写table样式
+//.el-table td, .el-table th {
+// padding:7px 0 !important;
+// font-size:13px !important;
+//}
+//.el-table .cell{
+ // line-height:15px !important;
+ // font-size:12px !important;
+//}
+
+// 字体颜色设置
+// 主体色默认色 黑色
+.baseFontColor{
+  color: #224425
+}
+// 黄色
+.yelloFontcolor{
+  color:#ffb90f;
+}
+// 灰黄色
+.deepYelloFontcolor{
+  color:#C67171;
+}
+// 淡蓝色
+.littleBlue{
+  color: #18E;
+}
+// 浅蓝色
+.acidBlue{
+  color: #3265a7;
+}
+// 绿色
+.newGreen{
+  color: #3f9f00;
+}
+// 红色
+.newRed{
+  color:#f63b34
+}
+// 黑色
+.newBlack{
+  color:#000
+}
+.tableRowClassName {
+  background: #D0D0D3;
+    color: #000;
+}

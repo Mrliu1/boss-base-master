@@ -1,0 +1,114 @@
+.left-right-body{
+  .dialog-main{
+   display: flex;
+    flex-flow:row;
+    justify-content:center;
+    .el-button{
+    padding: 8px 12px !important;
+    min-width:110px;
+    max-width: 200px;
+    width:100%;
+    }
+    .dialog-left{
+      min-width: 310px;
+      max-width: 400px;
+      width:35%;
+      flex-flow:row;
+      h2{
+        width:100%;
+        font-size: 16px;
+        font-weight:500;
+       // height: 40px;
+      }
+      ul{
+        display: block;
+        width:100%;
+        padding: 0;
+        .warn-class{
+          input{
+            border-color:#f56c6c;
+          }
+        }
+        li{
+        width:100%;
+        margin:10px;
+        .must-icon:before {
+          content: "*";
+          color: #f56c6c;
+          margin-right: 4px;
+        }
+         span{
+          display: inline-flex;
+          align-items:center;
+         width: 80px;
+         }
+         .warn{
+          color:#ff7f7f;
+          width:100%!important;
+         }
+         .tab-unique{
+             margin-left: -3px !important;
+         }
+         .model-tab{
+           display: inline-flex;
+            width: 200px;
+            flex-wrap: wrap;
+           .tab-input{
+           }
+           button{
+               width: 100%;
+                margin-bottom: 10px;
+                height: 35px;
+                margin-left: 0;
+           }
+         }
+        }
+      }
+    }
+    .dialog-right{
+      flex:1;
+      flex-flow:row;
+      width: calc(100% - 400px);
+      h2{
+        width:100%;
+        font-size: 16px;
+        font-weight:500;
+       // height: 40px;
+      }
+      ul{
+        width:100%;
+        padding:0;
+        display: flex;
+        li{
+         display:flex;
+         flex:1;
+         padding-right: 10px;
+         align-items:center;
+         .fn-div{
+         width:100%;
+         }
+         input,button{
+          min-width:110px;
+          max-width: 200px;
+                height: 35px;
+           }
+        }
+      }
+    }
+  }
+}
+.left-right-body-foot{
+.el-button{
+    padding: 8px 12px !important;
+    height:35px;
+    width:20%;
+    min-width:100px;
+    }
+}
+
+.left-right-model{
+    .el-dialog__header{
+    background:#efefef;
+    border-radius: 4px;
+    }
+}

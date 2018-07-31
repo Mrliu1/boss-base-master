@@ -1,0 +1,3 @@
+[submodule "src/outtercommons"]
+	path = src/outtercommons
+	url = https://git.icarbonx.com/liuxiao/boss-base-common.git
